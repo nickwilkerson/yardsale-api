@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /listings
-router.get('/listings', requireToken, (req, res, next) => {
+router.get('/listings', (req, res, next) => {
 	Item.find()
 		.then((listings) => {
 			// `listings` will be an array of Mongoose documents
@@ -45,7 +45,7 @@ router.get('/listings', requireToken, (req, res, next) => {
 
 // SHOW
 // GET /listings/5a7db6c74d55bc51bdf39793
-router.get('/listings/:id', requireToken, (req, res, next) => {
+router.get('/listings/:id', (req, res, next) => {
 	// req.params.id will be set based on the `:id` in the route
 	Item.findById(req.params.id)
 		.then(handle404)
@@ -57,7 +57,7 @@ router.get('/listings/:id', requireToken, (req, res, next) => {
 
 // CREATE
 // POST /listings/post
-router.post('/listings/post', requireToken, (req, res, next) => {
+router.post('/post', requireToken, (req, res, next) => {
 	// set owner of new item to be current user
 	req.body.item.owner = req.user.id
 
@@ -111,5 +111,6 @@ router.delete('/listings/:id', requireToken, (req, res, next) => {
 		// if an error occurs, pass it to the handler
 		.catch(next)
 })
+
 
 module.exports = router

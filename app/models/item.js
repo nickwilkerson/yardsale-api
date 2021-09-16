@@ -10,8 +10,7 @@ const itemSchema = new mongoose.Schema({
     required: true
   },
   price: {
-    type: String,
-    required: true
+    type: String
   },
   category: {
     type: String,
