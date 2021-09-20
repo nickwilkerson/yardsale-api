@@ -2,8 +2,10 @@
 Yard Sale is a website that provides users a destination to buy/sell/trade used winter sports equipment by contacting one another via direct message.
 
 ## Link to yardsale-client deployed site
+https://nickwilkerson.github.io/yardsale-client/
 
 ## Link to yardsale-api site
+https://gentle-retreat-52942.herokuapp.com/
 
 ## Link to yardsale-client repository
 https://github.com/nickwilkerson/yardsale-client
