@@ -74,7 +74,7 @@ router.post('/post', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /listings/5a7db6c74d55bc51bdf39793
-router.patch('/listings/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/edit/:id', requireToken, removeBlanks, (req, res, next) => {
 	// if the client attempts to change the `owner` property by including a new
 	// owner, prevent that by deleting that key/value pair
 	delete req.body.item.owner
@@ -112,5 +112,20 @@ router.delete('/listings/:id', requireToken, (req, res, next) => {
 		.catch(next)
 })
 
+// router.post('/uploadFile', imageUpload.single('image'), (req, res, next) => {
+// 	 const { filename, mimetype, size } = req.file
+// 		const filepath = req.file.path
+// 		db.insert({
+// 			filename,
+// 			filepath,
+// 			mimetype,
+// 			size,
+// 		})
+// 			.into('image_files')
+// 			.then(() => res.json({ success: true, filename }))
+// 			.catch((err) =>
+// 				res.json({ success: false, message: 'upload failed', stack: err.stack })
+// 			) 
+// })
 
 module.exports = router

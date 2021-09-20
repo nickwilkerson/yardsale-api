@@ -16,6 +16,12 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  userEmail: {
+    type: String
+  },
+  image: {
+    type: String
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
