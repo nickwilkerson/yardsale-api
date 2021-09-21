@@ -22,6 +22,9 @@ const itemSchema = new mongoose.Schema({
   image: {
     type: String
   },
+  numOfViews: {
+    type: Number
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
